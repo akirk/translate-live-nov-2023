@@ -43,7 +43,11 @@
 			color: var( --r-main-color );
 		}
 		.small {
-			font-size: 80%;
+			font-size: 70%;
+			line-height: .8 !important;
+		}
+		.smaller {
+			font-size: 90%;
 		}
 	</style>
 </head>
@@ -67,7 +71,7 @@
 			<section>
 				<h2>Translating WordPress</h2>
 				<ul>
-					<li class="fragment">Contribute translations from English to a language you speak</li>
+					<li>Contribute translations from English to a language you speak</li>
 					<li class="fragment">WordPress Core, plugins, and themes</li>
 					<li class="fragment">For many the first step into contributing to WordPress</li>
 					<li class="fragment">Happens at <a href="https://translate.wordpress.org/">translate.wordpress.org</a></li>
@@ -101,7 +105,7 @@
 			<section data-auto-animate>
 				<h2>What am I translating?</h2>
 				<div class="r-stack">
-					<img src="img/translate.wordpress.org-greek-table.png" alt="The GlotPress UI with strings to be translated" class="fragment">
+					<img src="img/translate.wordpress.org-greek-table.png" alt="The GlotPress UI with strings to be translated" >
 					<img src="img/translate.wordpress.org-what.png" alt="The GlotPress UI with the highlighted plugin name and an English string that doesn't seem very representative" class="fragment">
 				</div>
 			</section>
@@ -169,10 +173,17 @@
 
 				<ul>
 					<li>It's very quick to get started</li>
-					<li class="fragment">Works without a WordPress.org account (you receive a PO file instead of submitting)</li>
+					<li class="fragment">Works without a WordPress.org account<br/>→ you receive a PO file instead of submitting directly</li>
 					<li class="fragment">Very visual to see what you are translating</li>
-					<li class="fragment">Translate a plugin/theme to a new language from scratch</li>
-					<li class="fragment">Review existing translations and improve them on the spot
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Translate Live ... Is Good For</h2>
+
+				<ul>
+					<li>Translating a plugin/theme to a new language from scratch</li>
+					<li class="fragment">Reviewing existing translations and improve them on the spot
 						<ul class="fragment">
 							<li>See translated items in context</li>
 							<li>Work with space constraints</li>
@@ -181,32 +192,34 @@
 				</ul>
 			</section>
 			<section>
-				<h2>Translate Live ... the Good to Know</h2>
+				<h2>Translate Live ... Good to Know</h2>
 				<ul>
-					<li class="fragment">Be careful to use the Submit button to save your translations
+					<li>Be careful to use the Submit button to save your translations
 					<br>
 					<img src="img/translate-live-submit-button.png" alt="The bottom section of Translate Live with a submit button">
 					</li>
-					<li class="fragment">On a 99% plugin or theme it's hard to find the missing strings</li>
+					<li class="fragment">On a 99% translated plugin/theme it's hard to find the missing strings
+						<br/>→ Use the table view for that
+					</li>
 					<li class="fragment">Performance depends on your computer and network speed<br>(~7MB initial download, subsequently cached)</li>
 				</ul>
 			</section>
 
 			<section>
-				<h2>Translate Live ... the can be improved</h2>
+				<h2>Translate Live ... can be improved</h2>
 				<ul>
-					<li class="fragment">It can be hit or miss, sometimes English text is not recognized</li>
+					<li>It can be hit or miss, sometimes English text is not recognized</li>
 					<li class="fragment">Very large plugins can a bit slow</li>
 					<li class="fragment">Some plugins require a lengthy setup process *</li>
 					<li class="fragment">Plugins that depend on other plugins don't work well *</li>
 				</ul>
-				<small class="fragment">* We hope to solve this using plugin provided Blueprints in future <a href="https://meta.trac.wordpress.org/ticket/7251">Meta Trac #7251</a></small>
+				<small class="fragment">* We hope to solve this using plugin provided Blueprints in future, see <a href="https://meta.trac.wordpress.org/ticket/7251">Meta Trac #7251</a></small>
 			</section>
 
 			<section>
 				<h2>Translate Live ... How it works</h2>
 				<ul>
-					<li class="fragment">In PHP, English texts are replaced with their translations</li>
+					<li>In PHP, English texts are replaced with their translations</li>
 					<li class="fragment">We log these and transmit them to Javascript</li>
 					<li class="fragment">After the page loaded, we find the strings in the DOM</li>
 					<li class="fragment">Wrap them in a tag so that it can be right clicked</li>
@@ -216,17 +229,17 @@
 			</section>
 
 			<section>
-				<h2>Slides</h2>
-					<p><a href="https://alex.kirk.at/wcvie-2023/">https://alex.kirk.at/translate-live-nov-2023/</a></p>
-					<table style="font-size: 80%">
-						<tr><td>WordPress.org</td><td>Matrix</td></tr>
-						<tr><td><tt style="font-size: 90%">akirk</tt></td><td><tt style="font-size: 90%">@alex:kirk.at</tt></td></tr>
-					</table>
-
-				<h4 style="margin-top: 2em">Acknowledgements</h4>
-				<ul>
-					<li style="font-size: 80%">Presentation Framework: <a href="https://www.revealjs.com/">Reveal.js</a></li>
-				</ul>
+				<h3>Thank you!</h3>
+				<h2 style="color: #ee6855">Questions?</h2>
+				<p></p>
+				<div style="margin-top: 2em">
+				<h4>Find the slides at</h4>
+				<p class="small"><a href="https://alex.kirk.at/wcvie-2023/">alex.kirk.at/translate-live-nov-2023/</a></p>
+				<h4 style="margin-top: 2em">Find me at</h4>
+				<p class="small">On WordPress.org as <tt>akirk</tt></p>
+				<p class="small">On the web at <tt><a href="https://alex.kirk.at/" class="normal">alex.kirk.at</a></tt></p>
+				<p class="small">On Matrix as <tt>@alex:kirk.at</tt></p>
+				</div>
 			</section>
 		</div>
 	</div>
