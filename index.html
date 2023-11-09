@@ -13,9 +13,18 @@
 			fill: var( --r-background-color );
 			background: var( --r-background-color );
 		}
+		.reveal ul {
+			margin-left: 0;
+			padding-left: 0;
+		}
+
 		ul li {
 			margin-bottom: .5em;
 			list-style-type: none;
+		}
+		ul li ul li {
+			margin-bottom: 0;
+			list-style-type: disc;
 		}
 		table.contact {
 			margin-top: 2em;
@@ -66,11 +75,13 @@
 			<section>
 				<h2>Polyglots Handbook</h2>
 				<img src="img/polyglots-handbook.png" alt="">
+				<small><a href="https://make.wordpress.org/polyglots/handbook/">https://make.wordpress.org/polyglots/handbook/</a></small>
 			</section>
 
 			<section>
 				<h2>Typical Translation Environment</h2>
-				<img src="img/translate.wordpress.org-greek-table.png" alt="">
+				<img src="img/translate.wordpress.org-greek-table.png" alt="The GlotPress UI with strings to be translated">
+				<small><a href="https://translate.wordpress.org/projects/wp-plugins/friends/dev/el/default">https://translate.wordpress.org/projects/wp-plugins/friends/dev/el/default</a></small>
 			</section>
 
 			<section>
@@ -80,33 +91,92 @@
 
 			<section data-auto-animate>
 				<h2>What am I translating?</h2>
-				<img src="img/translate.wordpress.org-greek-table.png" alt="">
-			</section>
-
-			<section data-auto-animate>
-				<h2>What am I translating?</h2>
-				<img src="img/translate.wordpress.org-what.png" alt="">
+				<div class="r-stack">
+					<img src="img/translate.wordpress.org-greek-table.png" alt="The GlotPress UI with strings to be translated" class="fragment">
+					<img src="img/translate.wordpress.org-what.png" alt="The GlotPress UI with the highlighted plugin name and an English string that doesn't seem very representative" class="fragment">
+				</div>
 			</section>
 
 			<section>
 				<h2>Sorting</h2>
-				<img src="img/translate.wordpress.org-sorting.png" alt="">
+				<img src="img/translate.wordpress.org-sorting.png" alt="Default sort of translate.wordpress.org is by Priority but also by newest Original">
 			</section>
 
 			<section>
 				<h2>Typical Translation Environment</h2>
 
 				<ul>
-					<li class="fragment">Translating "somewhere in the middle"</li>
-					<li class="fragment">Missing Context</li>
+					<li class="fragment">Start translating "somewhere in the middle"</li>
+					<li class="fragment">Missing Context: is this a headline or a button?</li>
+					<li class="fragment">Ecosystem tools: Discussion, History, Other Locales, Translation Memory</li>
 				</ul>
 			</section>
 			<section>
 				<h2>Translate Live</h2>
 
 				<ul>
-					<li class="fragment">Loads a plugin inside your browser</li>
-					<li class="fragment">Inline Translation</li>
+					<li class="fragment">Built on <a href="https://playground.wordpress.net/">WordPress Playground</a></li>
+					<li class="fragment">Runs WordPress+plugin/theme inside your browser</li>
+					<li class="fragment">Provides Inline Translation through Local GlotPress</li>
+					<li class="fragment">Submit back</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Translate Live Demo</h2>
+				<ul>
+					<li><a href="https://translate.wordpress.org/projects/wp-plugins/friends/dev/de/default/playground/">https://translate.wordpress.org/projects/wp-plugins/friends/dev/de/default/playground/</a></li>
+					<li><a href="https://translate.wordpress.org/projects/wp-plugins/friends/dev/de/default/playground/">https://translate.wordpress.org/projects/wp-plugins/friends/dev/<strong>el</strong>/default/playground/</a></li>
+					<li>Example of a flow: <a href="https://wordpress.org/plugins/">https://wordpress.org/plugins/</a></li>
+				</ul>
+			</section>
+			<section>
+				<h2>Translate Live ... the Good</h2>
+
+				<ul>
+					<li>It's very quick to get started</li>
+					<li class="fragment">Works without a WordPress.org account (you receive a PO file instead of submitting)</li>
+					<li class="fragment">Very visual to see what you are translating</li>
+					<li class="fragment">Translate a plugin/theme to a new language from scratch</li>
+					<li class="fragment">Review existing translations and improve them on the spot
+						<ul class="fragment">
+							<li>See translated items in context</li>
+							<li>Work with space constraints</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Translate Live ... the Good to Know</h2>
+				<ul>
+					<li class="fragment">Be careful to use the Submit button to save your translations
+					<br>
+					<img src="img/translate-live-submit-button.png" alt="The bottom section of Translate Live with a submit button">
+					</li>
+					<li class="fragment">On a 99% plugin or theme it's hard to find the missing strings</li>
+					<li class="fragment">Performance depends on your computer and network speed<br>(~7MB initial download, subsequently cached)</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Translate Live ... the can be improved</h2>
+				<ul>
+					<li class="fragment">It can be hit or miss, sometimes English text is not recognized</li>
+					<li class="fragment">Very large plugins can a bit slow</li>
+					<li class="fragment">Some plugins require a lengthy setup process *</li>
+					<li class="fragment">Plugins that depend on other plugins don't work well *</li>
+				</ul>
+				<small class="fragment">* We hope to solve this using plugin provided Blueprints in future <a href="https://meta.trac.wordpress.org/ticket/7251">Meta Trac #7251</a></small>
+			</section>
+
+			<section>
+				<h2>Translate Live ... How it works</h2>
+				<ul>
+					<li class="fragment">In PHP, English texts are replaced with their translations</li>
+					<li class="fragment">We log these and transmit them to Javascript</li>
+					<li class="fragment">After the page loaded, we find the strings in the DOM</li>
+					<li class="fragment">Wrap them in a tag so that it can be right clicked</li>
+					<li class="fragment">Save the translation in a local GlotPress</li>
+					<li class="fragment">Export them to a PO file and import it to translate.wordpress.org</li>
 				</ul>
 			</section>
 
@@ -129,6 +199,7 @@
 	<script src="dist/plugin/notes/notes.js"></script>
 	<script>
 		Reveal.initialize({
+			width: 1200,
 			controls: true,
 			controlsTutorial: true,
 			progress: true,
